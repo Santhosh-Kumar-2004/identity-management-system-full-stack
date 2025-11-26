@@ -16,7 +16,7 @@ CREATE TABLE users(
 DROP TABLE users;
 
 INSERT INTO users(id, name, email, password, role, created_at, updated_at)
-VALUES ('550e8400-e29b-41d4-a716-446655440000', 'santhosh', 'santhosh@gmail.com', 'hvjvjh', 'admin'	);
+VALUES ('550e8400-e29b-41d4-a716-446655440000', 'santhosh', 'santhosh@gmail.com', 'hvjvjh', 'admin');
 
 
 
