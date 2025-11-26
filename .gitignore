@@ -45,7 +45,7 @@ pytest_cache/
 # DATABASE
 # ======================================================
 # MySQL dumps & local dev files
-*.sql
+# *.sql
 *.sql.gz
 *.db
 
