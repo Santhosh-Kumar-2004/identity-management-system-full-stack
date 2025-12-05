@@ -28,3 +28,8 @@ def get_db():
 
     finally:
         db.close()
+
+# Engine = manages DB connections
+# sessionmaker = defines how sessions behave
+# SessionLocal() = creates a new session
+# yield = gives session to request, then cleans it up
