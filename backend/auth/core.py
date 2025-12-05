@@ -8,3 +8,4 @@ pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
 # print(f"Here is the Hashed passowrd - {passowrd1}")
 # print(verify)
+
