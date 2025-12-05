@@ -19,3 +19,4 @@ seassionLocal = sessionmaker(
     autoflush=False,
     autocommit=False
 )
+
