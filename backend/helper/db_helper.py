@@ -20,3 +20,5 @@ seassionLocal = sessionmaker(
     autocommit=False
 )
 
+def get_db():
+    pass
