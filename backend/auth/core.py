@@ -30,8 +30,13 @@ def create_token(data: dict, expires_time: timedelta | None= None):
 
     return jwt.encode(to_encode, SECURITY_KEY, algorithm=ALGORITHM)
 
-
-
+def decode_token(token: str):
+    try:
+        payload = jwt.decode(token, SECURITY_KEY, algorithms=[ALGORITHM])
+        print(f"Here is the payload {payload}")
+        return payload
+    except:
+        pass
 
 
 
