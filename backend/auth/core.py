@@ -1,7 +1,10 @@
 from passlib.context import CryptContext
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
-passowrd1 = pwd_context.hash("Santhosh1")
+passowrd1 = pwd_context.hash("mysecretpassword123")
+verify = pwd_context.verify(passowrd1, "mysecretpassword123")
 
 print(passowrd1)
+print(verify)

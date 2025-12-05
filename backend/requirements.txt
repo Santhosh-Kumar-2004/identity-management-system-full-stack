@@ -5,6 +5,7 @@ python-dotenv
 # Authentication & Security
 python-jose
 passlib[bcrypt]
+passlib[argon2]
 
 # Database
 sqlalchemy
