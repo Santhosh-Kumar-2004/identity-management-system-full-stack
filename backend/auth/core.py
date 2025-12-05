@@ -22,7 +22,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
 def create_token(data: dict, expires_time: timedelta | None= None):
     to_encode = data.copy()
-    expire = datetime.now(tz=dt.timezone.utc) + (expires_time or timedelta(ACCESS_TOKEN_EXPIRE_MINUTES))
+    expire = datetime.now(tz=datetime.timezone.utc) + (expires_time or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
 
 
 
