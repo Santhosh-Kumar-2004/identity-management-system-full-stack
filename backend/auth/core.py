@@ -1,5 +1,14 @@
 from passlib.context import CryptContext
 from jose import JWTError, jwt
+from datetime import datetime, timedelta
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SECURITY_KEY = os.getenv("JWT_SECRET")
+
+ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
 
 # pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
@@ -11,7 +20,9 @@ def hash_password(password: str) -> str:
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
-
+def create_token(data: dict, expires_time: timedelta | None= None):
+    to_encode = data.copy()
+    expire = datetime.now(tz=dt.timezone.utc) + (expires_time or timedelta(ACCESS_TOKEN_EXPIRE_MINUTES))
 
 
 
