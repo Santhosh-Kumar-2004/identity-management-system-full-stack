@@ -13,3 +13,9 @@ engine = create_engine(
     pool_size=30,
     max_overflow=20
 )
+
+seassionLocal = sessionmaker(
+    bind=engine,
+    autoflush=False,
+    autocommit=False
+)
