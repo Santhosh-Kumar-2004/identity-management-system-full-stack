@@ -21,4 +21,10 @@ seassionLocal = sessionmaker(
 )
 
 def get_db():
-    pass
+    db = seassionLocal()
+
+    try:
+        yield db
+
+    finally:
+        db.close()
