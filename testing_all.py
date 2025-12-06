@@ -10,5 +10,5 @@ def hash_pwd(plain_pwd: str) -> str:
 def decode_pwd(hashed_pwd: str, plain_pwd: str) -> bool:
     return pwd_context.verify(plain_pwd, hashed_pwd) 
 
-def create_token(data: dict):
+def create_token(data: dict, expires_time: timedelta |  None = None):
     pass
