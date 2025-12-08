@@ -1,5 +1,5 @@
 # Identity Management System
-## User Management System
+## User Management System 2.0
 
 A full-stack User Management application built with **React**, **FastAPI**, **MySQL**, and **JWT Authentication**.  
 This project includes user registration, login, role-based access control, and a clean API architecture for managing user data securely.
