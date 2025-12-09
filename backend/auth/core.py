@@ -21,14 +21,14 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
 def create_token(data: dict, expires_time: timedelta | None= None):
-    to_encode = data.copy()
-    print(f"The data which copied {to_encode}")
+    data_copy = data.copy()
+    print(f"The data which copied {data_copy}")
 
     expire = datetime.now(tz=datetime.timezone.utc) + (expires_time or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
-    to_encode.update({"exp": expire})
-    print(jwt.encode(to_encode, SECURITY_KEY, algorithm=ALGORITHM))
+    data_copy.update({"exp": expire})
+    print(jwt.encode(data_copy, SECURITY_KEY, algorithm=ALGORITHM))
 
-    return jwt.encode(to_encode, SECURITY_KEY, algorithm=ALGORITHM)
+    return jwt.encode(data_copy, SECURITY_KEY, algorithm=ALGORITHM)
 
 def decode_token(token: str):
     try:
