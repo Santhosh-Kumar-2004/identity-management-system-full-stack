@@ -27,7 +27,7 @@ def create_token(data: dict, expires_time: timedelta | None= None):
     expire = datetime.now(tz=datetime.timezone.utc) + (expires_time or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
 
     data_copy.update({"exp": expire})
-    print(data_copy, SECURITY_KEY, algorithm=ALGORITHM)
+    # print(data_copy, SECURITY_KEY, algorithm=ALGORITHM)
 
     return jwt.encode(data_copy, SECURITY_KEY, algorithm=ALGORITHM)
 
