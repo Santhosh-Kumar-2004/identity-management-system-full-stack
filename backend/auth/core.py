@@ -3,7 +3,7 @@ from jose import JWTError, jwt
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import os
-from fastapi import HTTPException, status
+from fastapi import HTTPException, status, Header
 from sqlalchemy.orm import Session
 
 load_dotenv()
@@ -53,8 +53,8 @@ def decode_token(token: str):
         
 
 def get_current_user(
-        authorisation: 
-        db: 
+        authorisation: str = Header(None),
+        db: Session 
 )
 
 
