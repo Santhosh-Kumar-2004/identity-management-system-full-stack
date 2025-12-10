@@ -58,7 +58,12 @@ def get_current_user(
         authorisation: str = Header(None),
         db: Session = Depends(get_db),
 ):
-
+    if not authorisation or not authorisation.lower().startswith("bearer"):
+        raise HTTPException(
+            detail="Authorisation is not found",
+            headers= {"WWW-Authenticate": "bearer"},
+            status_code=status.HTTP_401_UNAUTHORIZED
+        )
 
 
 
