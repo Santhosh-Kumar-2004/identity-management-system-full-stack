@@ -15,10 +15,10 @@ ALGORITHM = os.getenv("ALGORTHIM")
 pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
 
-def hash_password(password: str) -> str:
+def hash_password(password: str) -> str: # passowrd hashing logic
     return pwd_context.hash(password)
 
-def verify_password(plain_password: str, hashed_password: str) -> bool:
+def verify_password(plain_password: str, hashed_password: str) -> bool: # Verifying the password logic
     return pwd_context.verify(plain_password, hashed_password)
 
 def create_token(data: dict, expires_time: timedelta | None= None):
