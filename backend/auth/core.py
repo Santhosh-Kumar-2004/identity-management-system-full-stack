@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import os
 
+
 load_dotenv()
 
 SECURITY_KEY = os.getenv("JWT_SECRET")
@@ -36,8 +37,13 @@ def decode_token(token: str):
         payload = jwt.decode(token, SECURITY_KEY, algorithms=[ALGORITHM])
         print(f"Here is the payload {payload}")
         return payload
-    except JWTError:
-        pass
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(
+            status_code = status.HTTP_401_UNAUTHORISED,
+            detail = "Token Expired",
+            headers = {"WWW-Authenticate: bearer"}
+        )
+    
         
 
 
