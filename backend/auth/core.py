@@ -66,6 +66,7 @@ def get_current_user(
         )
 
     token = authorisation.split(" ", 1)[1].strip()
+    payload = jwt.decode(token, SECURITY_KEY, algorithms=ALGORITHM)
 
 
 # passowrd1 = pwd_context.hash("mysecretpassword1234")
