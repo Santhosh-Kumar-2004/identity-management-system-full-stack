@@ -43,7 +43,12 @@ def decode_token(token: str):
             detail = "Token Expired",
             headers = {"WWW-Authenticate: bearer"}
         )
-    
+    except JWTError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="JWT token is not matching",
+            headers={"WWW-Authenticate": "bearer"}
+        )
         
 
 
