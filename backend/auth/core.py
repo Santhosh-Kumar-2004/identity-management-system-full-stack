@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import os
 from fastapi import HTTPException, status
+from sqlalchemy.orm import Session
 
 load_dotenv()
 
@@ -51,7 +52,10 @@ def decode_token(token: str):
         )
         
 
-
+def get_current_user(
+        authorisation: 
+        db: 
+)
 
 
 
