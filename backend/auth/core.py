@@ -3,7 +3,7 @@ from jose import JWTError, jwt
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import os
-
+from fastapi import HTTPException, status
 
 load_dotenv()
 
