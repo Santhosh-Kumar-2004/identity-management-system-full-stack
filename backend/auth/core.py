@@ -5,6 +5,8 @@ from datetime import datetime, timedelta
 import os
 from fastapi import HTTPException, status, Header, Depends
 from sqlalchemy.orm import Session
+from helper.db_helper import get_db
+
 
 load_dotenv()
 
@@ -54,8 +56,8 @@ def decode_token(token: str):
 
 def get_current_user(
         authorisation: str = Header(None),
-        db: Session =
-)
+        db: Session = Depends(get_db),
+):
 
 
 
