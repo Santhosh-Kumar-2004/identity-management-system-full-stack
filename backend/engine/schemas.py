@@ -3,8 +3,9 @@ from datetime import datetime
 from typing import Optional
 from models import UserRole
 
-class LoginUser(BaseModel):
+class CreateUser(BaseModel):
     name: Optional[str] = None
     email: EmailStr
     password: str
     role: Optional[UserRole] = UserRole.user
+
