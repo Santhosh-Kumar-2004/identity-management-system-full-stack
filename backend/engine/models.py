@@ -29,5 +29,7 @@ class User(Base):
     is_logged = Column(Boolean, nullable=False, default=False),
 
     created_at = Column(TIMESTAMP(timezone=True), server_default=func.now(), nullable=False)
-    updated_at = Column(TIMESTAMP(timezone=True), server_default=func.now(), nullable=False, onupdate=func.now()),
-    
+    updated_at = Column(TIMESTAMP(timezone=True), server_default=func.now(), nullable=False, onupdate=func.now())
+
+    def __repr__(self) -> str:
+        return f"<User id= {self.id}, email={self.email}, role={self.role}"
