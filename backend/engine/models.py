@@ -8,3 +8,4 @@ from sqlalchemy import (
     func
 )
 from sqlalchemy.orm import declarative_base
+from pydantic import BaseModel
