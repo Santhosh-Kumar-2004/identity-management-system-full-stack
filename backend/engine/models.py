@@ -10,6 +10,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import declarative_base
 from typing import Optional
 from enum import Enum as PyEnum
+from sqlalchemy import Enum as SQLEnum
 
 Base = declarative_base()
 
