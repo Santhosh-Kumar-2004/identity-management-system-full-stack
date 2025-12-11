@@ -7,6 +7,7 @@ from fastapi import HTTPException, status, Header, Depends
 from sqlalchemy.orm import Session
 from helper.db_helper import get_db
 from engine.models import User
+from engine.schemas import ResponseUser
 
 load_dotenv()
 
