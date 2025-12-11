@@ -9,3 +9,6 @@ class CreateUser(BaseModel):
     password: str
     role: Optional[UserRole] = UserRole.user
 
+class LoginUser(BaseModel):
+    email: EmailStr
+    password: str
