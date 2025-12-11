@@ -5,4 +5,5 @@ from sqlalchemy import (
     Boolean,
     Enum, 
     TIMESTAMP,
+    func
 )
