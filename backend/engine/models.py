@@ -9,3 +9,5 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import declarative_base
 from pydantic import BaseModel
+import enum
+from typing import Optional
