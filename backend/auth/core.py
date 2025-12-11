@@ -9,7 +9,7 @@ from helper.db_helper import get_db
 from engine.models import User
 from engine.schemas import ResponseUser
 
-load_dotenv()
+load_dotenv() # here the env gets loaded 
 
 SECURITY_KEY = os.getenv("JWT_SECRET")
 ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
