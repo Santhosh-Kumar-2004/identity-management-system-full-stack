@@ -16,3 +16,6 @@ Base = declarative_base()
 class UserRole(PyEnum):
     admin = "admin"
     user = "user"
+
+class User(Base):
+    __tablename__ = "users"
