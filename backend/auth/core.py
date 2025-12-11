@@ -6,7 +6,7 @@ import os
 from fastapi import HTTPException, status, Header, Depends
 from sqlalchemy.orm import Session
 from helper.db_helper import get_db
-
+from engine.models import User
 
 load_dotenv()
 
@@ -75,6 +75,7 @@ def get_current_user(
             headers={"WWW-Authenticate": "bearer"},
             status_code=status.HTTP_401_UNAUTHORIZED
         )
+
 
 # passowrd1 = pwd_context.hash("mysecretpassword1234")
 # verify = pwd_context.verify("mysecretpassword123", passowrd1)
