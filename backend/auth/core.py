@@ -76,8 +76,14 @@ def get_current_user(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
-    
+    user = db.query(User).filter(User.email == email_id).first()
 
+    if not user:
+        raise HTTPException(
+            detail=""
+        )
+
+    
 # passowrd1 = pwd_context.hash("mysecretpassword1234")
 # verify = pwd_context.verify("mysecretpassword123", passowrd1)
 
