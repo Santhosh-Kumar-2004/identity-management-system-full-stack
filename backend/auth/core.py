@@ -80,8 +80,13 @@ def get_current_user(
 
     if not user:
         raise HTTPException(
-            detail=""
+            detail="User not found. Log In again",
+            status_code=status.HTTP_401_UNAUTHORIZED
         )
+
+    
+
+
 
     
 # passowrd1 = pwd_context.hash("mysecretpassword1234")
