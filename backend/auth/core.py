@@ -91,7 +91,7 @@ def get_current_user(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
-    return ResponseUser.from_orm(user)
+    return ResponseUser.from(user)
 
 
 # passowrd1 = pwd_context.hash("mysecretpassword1234")
