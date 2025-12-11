@@ -7,3 +7,4 @@ from sqlalchemy import (
     TIMESTAMP,
     func
 )
+from sqlalchemy.orm import declarative_base
