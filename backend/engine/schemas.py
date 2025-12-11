@@ -12,3 +12,8 @@ class CreateUser(BaseModel):
 class LoginUser(BaseModel):
     email: EmailStr
     password: str
+
+class UpdateUser(BaseModel):
+    name: Optional[str] = None
+    email: Optional[EmailStr] = None
+    password: Optional[str] = None
