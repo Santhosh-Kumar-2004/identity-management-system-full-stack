@@ -17,3 +17,14 @@ class UpdateUser(BaseModel):
     name: Optional[str] = None
     email: Optional[EmailStr] = None
     password: Optional[str] = None
+
+class ResponseUser(BaseModel):
+    id: str
+    name: str
+    email: EmailStr
+    role: UserRole
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
+
+    class Config:
+        orm_mode = True
