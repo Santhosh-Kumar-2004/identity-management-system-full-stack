@@ -68,6 +68,13 @@ def get_current_user(
     token = authorisation.split(" ", 1)[1].strip()
     payload = decode_token(token=token)
 
+    email_id = payload.get("sub")
+    if not email_id:
+        raise HTTPException(
+            detail="User nt found",
+            headers={"WWW-Authenticate": "bearer"},
+            status_code=status.HTTP_401_UNAUTHORIZED
+        )
 
 # passowrd1 = pwd_context.hash("mysecretpassword1234")
 # verify = pwd_context.verify("mysecretpassword123", passowrd1)
