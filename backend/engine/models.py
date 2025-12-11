@@ -25,4 +25,4 @@ class User(Base):
     name = Column(String(255), nullable=False),
     email = Column(String(255), nullable=False, unique=True),
     password = Column(String(255), nullable=False),
-    role = Column(E)
+    role = Column(SQLEnum(UserRole), nullable=False, default=UserRole.user)
