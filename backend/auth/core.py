@@ -84,11 +84,13 @@ def get_current_user(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
-    
+    if not user.is_logged:
+        raise HTTPException(
+            
+        )
 
 
 
-    
 # passowrd1 = pwd_context.hash("mysecretpassword1234")
 # verify = pwd_context.verify("mysecretpassword123", passowrd1)
 
