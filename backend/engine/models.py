@@ -13,3 +13,6 @@ from enum import Enum as PyEnum
 
 Base = declarative_base()
 
+class UserRole(PyEnum):
+    admin = "admin"
+    user = "user"
