@@ -19,3 +19,5 @@ class UserRole(PyEnum):
 
 class User(Base):
     __tablename__ = "users"
+
+    id = Column(String(36), primary_key=True, default= lambda: str(uuid.uuid4()))
