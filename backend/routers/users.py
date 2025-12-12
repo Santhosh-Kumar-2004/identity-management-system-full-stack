@@ -19,6 +19,7 @@ def register(
 
     Args:
         user (CreateUser Schema Used): Register endpoint used to create the new users.
+        db with the get_db sessionLocal
 
         1. Checking the db to check for the Existing user
         2. Hashing the password which entered by the user
@@ -64,6 +65,9 @@ def register(
 @router.post("/login")
 def login(
     user: LoginUser,
-    db: Session = Depends(get_current_user)
+    db: Session = Depends(get_db)
 ):
-    pass
+    """Login Endpoint
+
+
+    """
