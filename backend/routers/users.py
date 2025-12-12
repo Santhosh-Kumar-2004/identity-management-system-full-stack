@@ -104,4 +104,4 @@ def login(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
-    
+    return {"access_token": access_token, "token_type": "bearer"}
