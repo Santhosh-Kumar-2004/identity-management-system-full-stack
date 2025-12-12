@@ -1,5 +1,6 @@
 from fastapi import APIRouter, status, HTTPException, Depends
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import SQLAlchemyError
 
 from helper.db_helper import get_db
 from engine.models import User
@@ -34,9 +35,10 @@ def register(
     hashed_password = hash_password(user.password)
     print(hashed_password)
 
-    creating_user = User(
-        name = user.name.strip(),
-        email = user.email,
-        password =  hashed_password,
-        is_logged = True
-    )
+    try: 
+        creating_user = User(
+            name = user.name.strip(),
+            email = user.email,
+            password =  hashed_password,
+            is_logged = True
+        )
