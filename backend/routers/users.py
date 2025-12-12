@@ -47,5 +47,10 @@ def register(
         db.commit()
         db.refresh(creating_user)
 
-    except:
-        pass
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(
+            detail=f"Unexpected error occurred, Do not worry This isn't Common",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+        
