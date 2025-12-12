@@ -83,3 +83,9 @@ def login(
             detail=".Invalid Credentials. Please Register...!",
             status_code=status.HTTP_401_UNAUTHORIZED
        )
+    
+    if not verify_password(user.password, existing_user.password):
+        raise HTTPException(
+            detail="Invalid Credentials. Please Register...!",
+            status_code=status.HTTP_401_UNAUTHORIZED
+        )
