@@ -73,7 +73,13 @@ def login(
         User with the LoginUser schmea to validate the inputs
         db with the new sessionLocal in it which got injected by fast.
 
-        1. 
+        1. Checking the Existing User or not logic
     """
 
     existing_user = db.query(User).filter(User.email == user.email).lower().first()
+
+    if not existing_user:
+        raise HTTPException(
+            detail="User Not Found. Please Register first...",
+            status_code=status.HTTP_401_UNAUTHORIZED
+       )
