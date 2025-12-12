@@ -90,3 +90,5 @@ def login(
             detail="Invalid Credentials. Please Register...!",
             status_code=status.HTTP_401_UNAUTHORIZED
         )
+    
+    
