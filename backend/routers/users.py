@@ -30,3 +30,5 @@ def register(
         )
 
     print(f"The input Data: {user}")
+
+    hash_password = hash_password(user.password)
