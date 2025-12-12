@@ -24,6 +24,8 @@ def register(
         2. Hashing the password which entered by the user
         3. Trying to crete the user into the db
         4. adding to db and committing it
+        5. Added 500 error handler using SQLAlchemyError
+        6. finally returned the ResponseUser with the respective created user
     """
 
     existing_user = db.query(User).filter(User.email == user.email).lower().first()
