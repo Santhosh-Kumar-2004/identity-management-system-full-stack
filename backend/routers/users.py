@@ -80,6 +80,6 @@ def login(
 
     if not existing_user:
         raise HTTPException(
-            detail="User Not Found. Please Register first...",
+            detail=".Invalid Credentials. Please Register...!",
             status_code=status.HTTP_401_UNAUTHORIZED
        )
