@@ -23,3 +23,8 @@ def register(
     """
 
     existing_user = db.query(User).filter(User.email == user.email).lower().first()
+    if existing_user:
+        raise HTTPException(
+            detail="User Already Created - Login Please",
+            status_code=status.HTTP_400_BAD_REQUEST,
+        )
