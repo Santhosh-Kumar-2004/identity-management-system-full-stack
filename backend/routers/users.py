@@ -28,3 +28,5 @@ def register(
             detail="User Already Registered - Login Now!",
             status_code=status.HTTP_400_BAD_REQUEST,
         )
+
+    
