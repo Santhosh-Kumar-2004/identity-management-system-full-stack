@@ -60,3 +60,10 @@ def register(
         )
         
     return ResponseUser.model_validate(creating_user)
+
+@router.post("/login")
+def login(
+    user: LoginUser,
+    db: Session = Depends(get_current_user)
+):
+    pass
