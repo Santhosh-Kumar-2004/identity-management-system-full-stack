@@ -69,5 +69,9 @@ def login(
 ):
     """Login Endpoint
 
+    Args: 
+        User with the LoginUser schmea to validate the inputs
+        db with the new sessionLocal in it which got injected by fast.
 
+        1. 
     """
