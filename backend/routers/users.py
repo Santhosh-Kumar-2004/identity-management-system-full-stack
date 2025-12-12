@@ -95,9 +95,13 @@ def login(
         existing_user.is_logged = True
         db.commit(existing_user)
 
-    except SQLAlchemyError as e:
+        access_token = create_token(data={"sub": user.email})
+
+    except SQLAlchemyError as e:    
         print(f"The error {e}")
         raise HTTPException(
             detail="Unexpected error Occured, This isn't common.",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+    
