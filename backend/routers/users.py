@@ -75,3 +75,5 @@ def login(
 
         1. 
     """
+
+    existing_user = db.query(User).filter(User.email == user.email).lower().first()
