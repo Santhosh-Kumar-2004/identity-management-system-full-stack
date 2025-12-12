@@ -37,5 +37,6 @@ def register(
     creating_user = User(
         name = user.name.strip(),
         email = user.email,
-
+        password =  hashed_password,
+        is_logged = True
     )
