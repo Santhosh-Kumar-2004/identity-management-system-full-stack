@@ -54,3 +54,4 @@ def register(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
         
+    return ResponseUser.model_validate(creating_user)
