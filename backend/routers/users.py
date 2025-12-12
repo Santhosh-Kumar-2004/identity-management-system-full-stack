@@ -42,3 +42,10 @@ def register(
             password =  hashed_password,
             is_logged = True
         )
+
+        db.add(creating_user)
+        db.commit()
+        db.refresh(creating_user)
+
+    except:
+        pass
