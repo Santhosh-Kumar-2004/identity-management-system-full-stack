@@ -20,3 +20,5 @@ def register(
         user (CreateUser Schema Used): Register endpoint used to create the new users.
         db (Session will use get_db, optional): Which create a new session to use this endpoint. Defaults to Depends(get_db).
     """
+
+    existing_user = db.query(User).filter(User.email == user.email).lower().first()
