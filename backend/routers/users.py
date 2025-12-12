@@ -33,3 +33,9 @@ def register(
 
     hashed_password = hash_password(user.password)
     print(hashed_password)
+
+    creating_user = User(
+        name = user.name.strip(),
+        email = user.email,
+
+    )
