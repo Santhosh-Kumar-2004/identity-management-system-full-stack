@@ -74,6 +74,7 @@ def login(
         db with the new sessionLocal in it which got injected by fast.
 
         1. Checking the Existing User or not logic
+        2. Checking whether the entered and db password is matching or not
     """
 
     existing_user = db.query(User).filter(User.email == user.email).lower().first()
