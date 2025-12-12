@@ -31,4 +31,5 @@ def register(
 
     print(f"The input Data: {user}")
 
-    hash_password = hash_password(user.password)
+    hashed_password = hash_password(user.password)
+    print(hashed_password)
