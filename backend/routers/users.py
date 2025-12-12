@@ -91,4 +91,5 @@ def login(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
     
-    
+    existing_user.is_logged = True
+    db.commit(existing_user)
