@@ -21,6 +21,9 @@ def register(
         user (CreateUser Schema Used): Register endpoint used to create the new users.
 
         1. Checking the db to check for the Existing user
+        2. Hashing the password which entered by the user
+        3. Trying to crete the user into the db
+        4. adding to db and committing it
     """
 
     existing_user = db.query(User).filter(User.email == user.email).lower().first()
