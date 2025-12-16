@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 from helper.db_helper import get_db
 from engine.models import User, UserRole
 from engine.schemas import ResponseUser
+from sqlalchemy.exc import SQLAlchemyError
 
 load_dotenv() # here the env gets loaded 
 
@@ -107,3 +108,8 @@ def validate_admin(
             detail="You are not allowed to access this page, Please contact admin",
             status_code=status.HTTP_403_FORBIDDEN
         )
+    
+    try:
+        return current_user
+    
+    except SQLAlchemyError as e:
