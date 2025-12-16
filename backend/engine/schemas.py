@@ -19,10 +19,10 @@ class UpdateUser(BaseModel):
     password: Optional[str] = None
 
 class ResponseUser(BaseModel):
-    id: str
+    id: Optional[str] 
     name: str
     email: EmailStr
-    role: UserRole
+    role: Optional[UserRole] = UserRole.user
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
 
