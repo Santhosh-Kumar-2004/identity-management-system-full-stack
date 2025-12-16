@@ -76,7 +76,7 @@ def login(
         1. Checking the Existing User or not logic
         2. Checking whether the entered and db password is matching or not
         3. Create dtry catch block to handle the errors. 
-        4. 
+        4. Creating access token using the create_token function from hte core
     """
 
     existing_user = db.query(User).filter(User.email == user.email).lower().first()
