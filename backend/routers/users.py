@@ -201,6 +201,7 @@ def update_user(
     
 @router.post("/logout")
 def logout(
+    db: Session = Depends(get_db),
     user: ResponseUser = Depends(get_current_user)
 ):
     """
@@ -212,3 +213,9 @@ def logout(
             detail="The user not found yet! Login Once to fetch you!",
             status_code=status.HTTP_401_UNAUTHORIZED
         )
+    
+    try:
+        pass
+
+    except:
+        pass
