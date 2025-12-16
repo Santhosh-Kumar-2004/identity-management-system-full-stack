@@ -92,3 +92,12 @@ def get_current_user(
         )
 
     return ResponseUser.model_validate(user)
+
+def validate_admin(
+    current_user: ResponseUser = Depends(get_current_user)
+):
+    """Thi is the function which is used to  validate whether the user is Admin or normal User. 
+
+    Args: 
+        The input we added as the current user and extracting information from the Get current user
+    """
