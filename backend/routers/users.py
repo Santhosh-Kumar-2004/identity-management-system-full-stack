@@ -223,7 +223,10 @@ def logout(
         )
     
     try:
-        pass
+        current_user.is_logged = False
+        db.add(current_user)
+        db.refresh()
 
-    except:
-        pass
+    except SQLAlchemyError:
+        db.rollback()
+        
