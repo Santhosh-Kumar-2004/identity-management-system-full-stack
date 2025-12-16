@@ -205,7 +205,7 @@ def logout(
     user: ResponseUser = Depends(get_current_user)
 ):
     """
-    This is the Logout endpoint which makes the user loggin out and is_logged false, So in the mean while they should have to login again to acccess the page again
+    This is the Logout endpoint which makes the user loggin out and is_logged false, So in the mean while they should have to login again to acccess the page again. 
     """
 
     if not user:
