@@ -6,7 +6,7 @@ import os
 from fastapi import HTTPException, status, Header, Depends
 from sqlalchemy.orm import Session
 from helper.db_helper import get_db
-from engine.models import User
+from engine.models import User, UserRole
 from engine.schemas import ResponseUser
 
 load_dotenv() # here the env gets loaded 
@@ -101,3 +101,9 @@ def validate_admin(
     Args: 
         The input we added as the current user and extracting information from the Get current user function
     """
+
+    if current_user.role != UserRole.admin:
+        raise HTTPException(
+            detail="You are not allowed to access this page, Please contact admin",
+            status_code=status.HTTP_403_FORBIDDEN
+        )
