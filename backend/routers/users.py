@@ -119,7 +119,8 @@ def current_user(
 
     Args:
         1. Checking the user existence of the user with an If condition
-        2. Created the try block and returning the exact user from the geT_current_user
+        2. Created the try block and returning the exact user from the get_current_user
+        3. Created the Except block to handle the DB related upcoming errors. 
     """
 
     if not user:
