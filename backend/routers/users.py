@@ -137,3 +137,8 @@ def current_user(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
+@router.put("/update-user", response_model=ResponseUser)
+def update_user(
+    validate: UpdateUser,
+    db:
+)
