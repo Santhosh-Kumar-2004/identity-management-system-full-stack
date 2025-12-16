@@ -111,3 +111,13 @@ def login(
 
     return {"access_token": access_token, "token_type": "bearer"}
 
+@router.get("/user", response_model=ResponseUser)
+def current_user(
+    user: ResponseUser = Depends(get_current_user)
+):
+    """This is the endpoint which extracts the Current users INformation including the Admins one I think so
+
+    Args:
+        user (ResponseUser, optional): Defaults to Depends(get_current_user).
+    """
+
