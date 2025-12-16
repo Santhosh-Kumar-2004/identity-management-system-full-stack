@@ -140,5 +140,7 @@ def current_user(
 @router.put("/update-user", response_model=ResponseUser)
 def update_user(
     validate: UpdateUser,
-    db:
-)
+    db: Session = Depends(get_db),
+    current_user: ResponseUser = Depends(get_current_user)
+):
+    pass
