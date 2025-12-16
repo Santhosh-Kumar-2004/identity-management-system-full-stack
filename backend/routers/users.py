@@ -124,6 +124,6 @@ def current_user(
     if not user:
         raise HTTPException(
             detail="Invalid User, Please Login first!",
-            
+            status_code=status.HTTP_401_UNAUTHORIZED
         )
 
