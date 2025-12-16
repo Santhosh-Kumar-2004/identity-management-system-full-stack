@@ -198,3 +198,13 @@ def update_user(
             detail="The error code is 500, Found it Unexpectedly",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+    
+@router.post("/logout")
+def logout(
+    user: ResponseUser = Depends(get_current_user)
+):
+    """
+    This is the Logout endpoint which makes the user loggin out and is_logged false, So in the mean while they should have to login again to acccess the page again
+    """
+
+    if
