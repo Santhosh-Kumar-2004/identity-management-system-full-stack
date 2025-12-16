@@ -187,3 +187,8 @@ def update_user(
     except SQLAlchemyError as e:
         db.rollback()
         print(f"Unexpected error the Update Endpoint: {e}")
+        
+        raise HTTPException(
+            detail="The error code is 500, Found it Unexpectedly",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
