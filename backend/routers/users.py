@@ -210,5 +210,5 @@ def logout(
     if not user:
         raise HTTPException(
             detail="The user not found yet! Login Once to fetch you!",
-            
+            status_code=status.HTTP_401_UNAUTHORIZED
         )
