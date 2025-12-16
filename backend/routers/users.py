@@ -181,5 +181,6 @@ def update_user(
 
         db.add(user)
         db.commit()
+        db.refresh(user)
 
         
