@@ -127,3 +127,10 @@ def current_user(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
+    try:
+        print(f"Here is the Current User Details: {user}")
+        return user
+    
+    except SQLAlchemyError as e:
+        
+
