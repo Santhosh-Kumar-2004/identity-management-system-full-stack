@@ -118,7 +118,8 @@ def current_user(
     """This is the endpoint which extracts the Current users INformation including the Admins one I think so
 
     Args:
-        1. 
+        1. Checking the user existence of the user with an If condition
+        2. Created the try block and returning the exact user from the geT_current_user
     """
 
     if not user:
