@@ -102,6 +102,7 @@ def login(
         access_token = create_token(data={"sub": user.email})
 
     except SQLAlchemyError as e:    
+        db.rollback()
         print(f"The error {e}")
         raise HTTPException(
             detail="Unexpected error Occured, This isn't common.",
