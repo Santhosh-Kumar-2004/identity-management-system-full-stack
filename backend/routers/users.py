@@ -187,6 +187,8 @@ def update_user(
         db.commit()
         db.refresh(user)
 
+        return ResponseUser.model_validate(user)
+
         
     except SQLAlchemyError as e:
         db.rollback()
