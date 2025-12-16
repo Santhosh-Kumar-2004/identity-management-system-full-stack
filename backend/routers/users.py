@@ -215,6 +215,12 @@ def logout(
         )
     
     current_user = db.query(User).filter(User.email == user.email).lower().first()
+
+    if not current_user:
+        raise HTTPException(
+            detail="User has some errors, Go login to get access again",
+            status_code=status.HTTP_400_BAD_REQUEST
+        )
     
     try:
         pass
