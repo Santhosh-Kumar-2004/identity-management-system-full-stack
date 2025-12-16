@@ -207,4 +207,8 @@ def logout(
     This is the Logout endpoint which makes the user loggin out and is_logged false, So in the mean while they should have to login again to acccess the page again
     """
 
-    if
+    if not user:
+        raise HTTPException(
+            detail="The user not found yet! Login Once to fetch you!",
+            
+        )
