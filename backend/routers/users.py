@@ -132,5 +132,8 @@ def current_user(
         return user
     
     except SQLAlchemyError as e:
-        
+        raise HTTPException(
+            detail="Error occurred unexpectedly, Please try again after Sometime.",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
