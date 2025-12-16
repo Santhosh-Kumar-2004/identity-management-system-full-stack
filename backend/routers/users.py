@@ -158,3 +158,9 @@ def update_user(
         )
     
     user = db.query(User).filter(User.email == current_user.email).lower().first()
+
+    if not user:
+        raise HTTPException(
+            detail="User not found",
+            status_code=status.HTTP_401_UNAUTHORIZED
+        )
