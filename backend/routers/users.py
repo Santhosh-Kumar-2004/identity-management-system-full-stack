@@ -143,4 +143,10 @@ def update_user(
     db: Session = Depends(get_db),
     current_user: ResponseUser = Depends(get_current_user)
 ):
-    pass
+    """This is the endpoint which helps updating the user who needs to update their Credentials
+
+    Args:
+        validate (UpdateUser): _description_
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+        current_user (ResponseUser, optional): _description_. Defaults to Depends(get_current_user).
+    """
