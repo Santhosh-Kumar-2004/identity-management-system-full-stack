@@ -166,4 +166,11 @@ def update_user(
         )
     
     try:
-        pass
+        if validate_user.name is not None:
+            user.name = validate_user.name
+
+        if validate_user.email is not None:
+            user.email = validate_user.email
+
+        if validate_user.password is not None:
+            user.password = validate_user.password
