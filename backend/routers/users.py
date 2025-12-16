@@ -199,7 +199,7 @@ def update_user(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
     
-@router.post("/logout")
+@router.post("/logout", status_code=204)
 def logout(
     db: Session = Depends(get_db),
     user: ResponseUser = Depends(get_current_user)
