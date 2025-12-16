@@ -164,3 +164,6 @@ def update_user(
             detail="User not found",
             status_code=status.HTTP_401_UNAUTHORIZED
         )
+    
+    try:
+        pass
