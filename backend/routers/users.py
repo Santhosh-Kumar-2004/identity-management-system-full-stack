@@ -178,3 +178,7 @@ def update_user(
         print(
             "Update went successfully!"
         )
+
+        db.add(user)
+        db.commit()
+        
