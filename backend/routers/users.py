@@ -214,6 +214,8 @@ def logout(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
     
+    current_user = db.query(User).filter(User.email == user.email).lower().first()
+    
     try:
         pass
 
