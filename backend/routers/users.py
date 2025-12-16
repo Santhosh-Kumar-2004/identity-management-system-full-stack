@@ -77,6 +77,8 @@ def login(
         2. Checking whether the entered and db password is matching or not
         3. Create dtry catch block to handle the errors. 
         4. Creating access token using the create_token function from hte core
+        5. Except block is handling any DB related SQLAlchemy errors.
+        6. Finally returning the Access tokenw itht ehtype of the token
     """
 
     existing_user = db.query(User).filter(User.email == user.email).lower().first()
