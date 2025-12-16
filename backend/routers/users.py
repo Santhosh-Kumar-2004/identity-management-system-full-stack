@@ -157,4 +157,4 @@ def update_user(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
     
-    
+    user = db.query(User).filter(User.email == current_user.email).lower().first()
