@@ -121,3 +121,5 @@ def current_user(
         user (ResponseUser, optional): Defaults to Depends(get_current_user).
     """
 
+    
+
