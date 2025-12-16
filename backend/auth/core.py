@@ -99,5 +99,5 @@ def validate_admin(
     """Thi is the function which is used to  validate whether the user is Admin or normal User. 
 
     Args: 
-        The input we added as the current user and extracting information from the Get current user
+        The input we added as the current user and extracting information from the Get current user function
     """
