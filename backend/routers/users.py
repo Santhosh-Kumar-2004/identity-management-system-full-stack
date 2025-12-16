@@ -174,3 +174,7 @@ def update_user(
 
         if validate_user.password is not None:
             user.password = validate_user.password
+
+        print(
+            "Update went successfully!"
+        )
