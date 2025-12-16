@@ -184,3 +184,6 @@ def update_user(
         db.refresh(user)
 
         
+    except SQLAlchemyError as e:
+        db.rollback()
+        print(f"Unexpected error the Update Endpoint: {e}")
