@@ -113,3 +113,6 @@ def validate_admin(
         return current_user
     
     except SQLAlchemyError as e:
+        print(f"Error occurred while validating/authorising the user")
+
+        raise HTTPException()
