@@ -121,5 +121,9 @@ def current_user(
         user (ResponseUser, optional): Defaults to Depends(get_current_user).
     """
 
-    
+    if not user:
+        raise HTTPException(
+            detail="Invalid User, Please Login first!",
+            
+        )
 
