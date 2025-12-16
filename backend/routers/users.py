@@ -148,7 +148,10 @@ def update_user(
     """This is the endpoint which helps updating the user who needs to update their Credentials
 
     Args:
-        1. Checking for the current user existence
+        1. Checking for the current user existence.
+        2. Querying the db for the Matching user 
+        3. Creating the try catch block
+        4. Created the three if blocks inside try to assing the old value with the new ones
     """
 
     if not current_user:
