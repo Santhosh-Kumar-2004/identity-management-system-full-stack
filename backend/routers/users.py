@@ -152,6 +152,7 @@ def update_user(
         2. Querying the db for the Matching user 
         3. Creating the try catch block
         4. Created the three if blocks inside try to assing the old value with the new ones
+        5. FInally updated the ended with the except block
     """
 
     if not current_user:
