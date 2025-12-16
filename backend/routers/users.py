@@ -148,7 +148,7 @@ def update_user(
     """This is the endpoint which helps updating the user who needs to update their Credentials
 
     Args:
-        1. 
+        1. Checking for the current user existence
     """
 
     if not current_user:
