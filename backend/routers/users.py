@@ -228,11 +228,12 @@ def logout(
         db.commit()
         db.refresh()
 
-    except SQLAlchemyError:
+    except SQLAlchemyError as e:
         db.rollback()
         print(f"Unexpected error occeured in the DB: {e}")
 
         raise HTTPException(
-            
+            detail="Internal Server Error",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
         
