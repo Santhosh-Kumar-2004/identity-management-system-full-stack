@@ -225,8 +225,14 @@ def logout(
     try:
         current_user.is_logged = False
         db.add(current_user)
+        db.commit()
         db.refresh()
 
     except SQLAlchemyError:
         db.rollback()
+        print(f"Unexpected error occeured in the DB: {e}")
+
+        raise HTTPException(
+            
+        )
         
