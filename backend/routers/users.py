@@ -150,3 +150,9 @@ def update_user(
     Args:
         1. 
     """
+
+    if not current_user:
+        raise HTTPException(
+            detail="The user not found, Please try to login to get the Fresh Token",
+            status_code=status.HTTP_401_UNAUTHORIZED
+        )
