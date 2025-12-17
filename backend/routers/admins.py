@@ -101,3 +101,9 @@ def make_admins(
         admin (_type_, optional): validate admin func used to check for the admin authoriation
         schema (_type_, optional): This is the schema used to validate the request
     """
+
+    if not user_id:
+        raise HTTPException(
+            detail="User id not found, Please log in first",
+            status_code=status.HTTP_400_BAD_REQUEST
+        )
