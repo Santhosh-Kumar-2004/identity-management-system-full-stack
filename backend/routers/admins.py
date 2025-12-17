@@ -104,7 +104,10 @@ def make_admins(
         finally the schema
 
         1. First we are checking for the admin role
-        2. 
+        2. Then we are checking for the user_id existence
+        3. Created the try catch block
+        4. Queried the db and retireved the right person
+        5. 
     """
 
     if not admin:
@@ -127,16 +130,8 @@ def make_admins(
                 detail="User not Found, Please register",
                 status_code=status.HTTP_404_NOT_FOUND
             )
-
-        if user.role == UserRole.admin and schema.role != UserRole.admin:
-            counting_admins = db.query(User).filter(User.role == UserRole.admin).count()
-            if counting_admins <= 1:
-                raise HTTPException(
-                    detail="Cannot delete the last Admin",
-                    status_code=status.HTTP_400_BAD_REQUEST
-                )
             
-        user.role = schema.role
+        user.role = UserRole.admin
         db.add(user)
         db.commit()
         db.refresh(user)
