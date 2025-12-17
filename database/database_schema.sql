@@ -24,6 +24,9 @@ VALUES ('550e8400-e29b-41d4-a716-446655440000', 'santhosh', 'santhosh@gmail.com'
 INSERT INTO users(id, name, email, password)
 VALUES ('550e8400-e29b-41d4-a716-446655440001', 'santhosh', 'santhosh@gmail.com', 'hvjvjh');
 
+INSERT INTO users(id, name, email, password, role)
+VALUES ('550e8400-e29b-41d4-a716-446655440001', 'santhosh', 'san@gmail.com', 'san', 'admin');
+
 SELECT * FROM users;
 
 
