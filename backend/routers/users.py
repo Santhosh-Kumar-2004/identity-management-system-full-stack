@@ -253,3 +253,9 @@ def delete_user(
 
         1. 
     """
+
+    if not user_id:
+        raise HTTPException(
+            detail="User ID not found, Please login to get one",
+            status_code=status.HTTP_404_NOT_FOUND
+        )
