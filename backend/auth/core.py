@@ -46,7 +46,7 @@ def decode_token(token: str):
         return payload
     except jwt.ExpiredSignatureError:
         raise HTTPException(
-            status_code = status.HTTP_401_UNAUTHORISED,
+            status_code = status.HTTP_401_UNAUTHORIZED,
             detail = "Token Expired",
             headers = {"WWW-Authenticate: bearer"}
         )
