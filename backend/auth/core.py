@@ -30,7 +30,7 @@ def create_token(data: dict, expires_time: timedelta | None= None):
     data_copy = data.copy()
     print(f"The data which copied {data_copy}")
 
-    expire = datetime.now(tz=timezone.utc) + (expires_time or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
+    expire = datetime.now(tz=timezone.utc) + (expires_time or timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES)))
 
     data_copy.update({"exp": expire})
     # print(data_copy, SECURITY_KEY, algorithm=ALGORITHM)
