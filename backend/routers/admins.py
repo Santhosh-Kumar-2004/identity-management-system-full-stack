@@ -57,7 +57,7 @@ def get_user_by_id(
 
     Args:
         user id is an str, db session and admin inout to validate
-        
+
         0. Created user_id input and assinged it to String
         1. Imported db depend on the get_db session Local
         2. validating the user, Admin or not
@@ -95,14 +95,17 @@ def make_admins(
     admin = Depends(validate_admin),
     schema = RoleChangeRequest
 ):
-    """Thisnis the endpoint which is used to create and convert the normal user into Admins, but only it can be done by another admin not by any noremal users/
+    """This is the endpoint which is used to create and convert the normal user into Admins, but only it can be done by another admin not by any noremal users/
 
     Args:
-        user_id (str): This is used to select the particular user with id
-        db (Session, optional): This helps to query the db 
-        admin (_type_, optional): validate admin func used to check for the admin authoriation
-        schema (_type_, optional): This is the schema used to validate the request
+        user_id which is an str, 
     """
+
+    if not admin:
+        raise HTTPException(
+            detail="Unable to authorise you, Please contact admin.",
+            status_code=status.HTTP_403_FORBIDDEN
+        )
 
     if not user_id:
         raise HTTPException(
