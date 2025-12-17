@@ -31,4 +31,4 @@ class ResponseUser(BaseModel):
     }
 
 class RoleChangeRequest(BaseModel):
-    role: UserRole
+    role: UserRole.admin
