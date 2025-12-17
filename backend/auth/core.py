@@ -10,7 +10,7 @@ from engine.models import User, UserRole
 from engine.schemas import ResponseUser
 from sqlalchemy.exc import SQLAlchemyError
 
-load_dotenv() # here the env gets loaded 
+load_dotenv()
 
 SECURITY_KEY = os.getenv("JWT_SECRET")
 ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")

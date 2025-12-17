@@ -7,11 +7,11 @@ from routers.admins import router as admin_routes
 from helper.db_helper import engine
 from engine.models import Base
 
-from dotenv import load_dotenv
-from pathlib import Path
+# from dotenv import load_dotenv
+# from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
-load_dotenv(BASE_DIR / ".env")
+# BASE_DIR = Path(__file__).resolve().parent
+# load_dotenv(BASE_DIR / ".env")
 
 app = FastAPI(
     title="User Identity and Management System 2.0",
