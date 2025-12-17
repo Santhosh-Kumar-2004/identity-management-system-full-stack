@@ -271,4 +271,3 @@ def delete_user(
         
         db.delete(user)
         db.commit()
-        db.refresh()
