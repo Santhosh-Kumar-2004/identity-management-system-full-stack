@@ -86,3 +86,7 @@ def get_user_by_id(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
     
+@router.put("/user/{user_id}/role", response_model=ResponseUser)
+def make_admins(
+    
+)
