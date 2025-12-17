@@ -34,6 +34,8 @@ def create_token(data: dict, expires_time: timedelta | None= None):
 
     data_copy.update({"exp": expire})
     # print(data_copy, SECURITY_KEY, algorithm=ALGORITHM)
+    print(type(SECURITY_KEY), SECURITY_KEY)
+
 
     return jwt.encode(data_copy, SECURITY_KEY, algorithm=ALGORITHM)
 
