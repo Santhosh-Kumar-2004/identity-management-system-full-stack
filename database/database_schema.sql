@@ -15,6 +15,7 @@ CREATE TABLE users(
 ALTER TABLE users
 ADD COLUMN is_logged boolean;
 
+-- Deletig the whole table query
 DROP TABLE users;
 
 INSERT INTO users(id, name, email, password)
