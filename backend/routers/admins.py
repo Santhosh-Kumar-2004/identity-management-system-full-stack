@@ -107,7 +107,7 @@ def make_admins(
         2. Then we are checking for the user_id existence
         3. Created the try catch block
         4. Queried the db and retireved the right person
-        5. 
+        5. Finall promoting to admin the user
     """
 
     if not admin:
