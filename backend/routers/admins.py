@@ -161,7 +161,7 @@ def admin_logout(
     4. Handling the user not found error
     5. Making the is_logged into False once the user is fethced
     6. Adding and committing and refreshing the db
-    7. 
+    7. Finally handling the errors in Except blocks
     """
 
     if not admin:
