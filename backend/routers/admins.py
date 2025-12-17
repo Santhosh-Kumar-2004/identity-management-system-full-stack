@@ -45,6 +45,7 @@ def get_all_users(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
     
+    
 @router.get("/user/{user_id}", response_model=ResponseUser)
 def get_user_by_id(
     user_id: str, 
@@ -83,3 +84,5 @@ def get_user_by_id(
             detail="Internal servie error: 500*",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+    
+    
