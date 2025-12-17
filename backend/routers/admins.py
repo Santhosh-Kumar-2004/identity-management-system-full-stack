@@ -24,3 +24,8 @@ def get_all_users(
         admin (Depends): va;ildate admin function which is imported from the core
         1. 
     """
+
+    try:
+        pass
+    except SQLAlchemyError as e:
+        pass
