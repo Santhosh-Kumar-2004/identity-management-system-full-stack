@@ -80,5 +80,6 @@ def get_user_by_id(
     except SQLAlchemyError as e:
         print(f"One error occurred at the get user by id: {e}")
         raise HTTPException(
-            detail=""
+            detail="Internal servie error: 500*",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
