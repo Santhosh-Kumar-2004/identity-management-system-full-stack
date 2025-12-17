@@ -88,5 +88,8 @@ def get_user_by_id(
     
 @router.put("/user/{user_id}/role", response_model=ResponseUser)
 def make_admins(
+    user_id: str,
+    db: Session = Depends(get_db),
     
-)
+):
+    pass
