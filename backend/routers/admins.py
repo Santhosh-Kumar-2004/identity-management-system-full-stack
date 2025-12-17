@@ -59,5 +59,12 @@ def get_user_by_id(
 
     if not admin:
         raise HTTPException(
-            
+            detail="Unable to authorise you, Please contact admin.",
+            status_code=status.HTTP_403_FORBIDDEN
         )
+    
+    try:
+        pass
+
+    except:
+        pass
