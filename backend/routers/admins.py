@@ -24,6 +24,11 @@ def get_all_users(
         admin (Depends): va;ildate admin function which is imported from the core
         1. 
     """
+    if not admin:
+        raise HTTPException(
+            detail="You are not allowed to access this page, Please contact admin",
+            
+        )
 
     try:
         user = db.query(User).all()
