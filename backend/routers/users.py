@@ -244,4 +244,10 @@ def logout(
 def delete_user(
     user_id: str,
     db: Session = Depends(get_db)
-)
+):
+    """THis is the final endpoint for the user, which make the user to delete in a Hard Way from Db
+
+    Args:
+        user_id (str): _description_
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+    """
