@@ -239,4 +239,9 @@ def logout(
             detail="Internal Server Error",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
-            
+
+@router.delete("/user/{user_id}")
+def delete_user(
+    user_id: str,
+    db: Session = Depends(get_db)
+)
