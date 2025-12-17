@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import users as user_routes
-from routers import admins as admin_routes
+from routers.users import router as user_routes
+from routers.admins import router as admin_routes
 
 from helper.db_helper import engine
 from engine.models import Base
@@ -28,7 +28,7 @@ app.include_router(admin_routes)
 
 @app.get("/root-route")
 def root_router():
-    
+
     """This is the root, Just created to test the endpoint
     """
     return "The endpoint and app is running perfectly!"
