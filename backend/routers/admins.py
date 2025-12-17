@@ -155,7 +155,13 @@ def admin_logout(
 ):
     """This is the endpoint where the admin have the rights to make the user logout, Just making the logged in as False, not a Hard delete. 
 
-    1. 
+    1. Checking the admin is real ro not
+    2. Created the try catch block to handle the errors
+    3. Querying the db and getting the right user
+    4. Handling the user not found error
+    5. Making the is_logged into False once the user is fethced
+    6. Adding and committing and refreshing the db
+    7. 
     """
 
     if not admin:
@@ -177,6 +183,8 @@ def admin_logout(
         db.add(user)
         db.commit()
         db.refresh(user)
+
+        print(f"The user state now: {user.is_logged}")
 
         return ResponseUser.model_validate(user)
 
