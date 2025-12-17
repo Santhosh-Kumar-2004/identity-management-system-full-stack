@@ -47,6 +47,7 @@ def get_all_users(
     
 @router.get("/user/{user_id}", response_model=ResponseUser)
 def get_user_by_id(
+    user_id: str, 
     db: Session = Depends(get_db),
     admin = Depends(validate_admin)
 ):
@@ -64,7 +65,7 @@ def get_user_by_id(
         )
     
     try:
-        pass
+        user = db.query(User).filter(User.id == user_)
 
     except:
         pass
