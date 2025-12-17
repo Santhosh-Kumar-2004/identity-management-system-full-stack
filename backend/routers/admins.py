@@ -66,7 +66,14 @@ def get_user_by_id(
         )
     
     try:
-        user = db.query(User).filter(User.id == user_id)
+        user = db.query(User).filter(User.id == user_id).first()
+        print(f"User Got with the ID is: {user}")
+
+        if not user:
+            raise HTTPException(
+                detail="User is not authenticated, Please login to get new ID",
+                status_code=status.HTTP_401_UNAUTHORIZED
+            )
 
     except:
         pass
