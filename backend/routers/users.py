@@ -65,6 +65,7 @@ def register(
         
     return ResponseUser.model_validate(creating_user)
 
+
 @router.post("/login")
 def login(
     user: LoginUser,
@@ -114,6 +115,7 @@ def login(
 
     return {"access_token": access_token, "token_type": "bearer"}
 
+
 @router.get("/user", response_model=ResponseUser)
 def current_user(
     user: ResponseUser = Depends(get_current_user)
@@ -141,6 +143,7 @@ def current_user(
             detail="Error occurred unexpectedly, Please try again after Sometime.",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+    
 
 @router.put("/update-user", response_model=ResponseUser)
 def update_user(
@@ -201,6 +204,7 @@ def update_user(
             detail="The error code is 500, Found it Unexpectedly",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+    
     
 @router.post("/logout", status_code=204)
 def logout(
