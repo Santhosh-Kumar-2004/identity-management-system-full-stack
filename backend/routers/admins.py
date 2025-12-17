@@ -138,3 +138,10 @@ def make_admins(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR0
         )
     
+    except Exception as a:
+        print(f"The Pythons common error occurred: {e}")
+
+        raise HTTPException(
+            detail="Not a DB error, Instead internal",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
