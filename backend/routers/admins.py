@@ -22,7 +22,10 @@ def get_all_users(
 
     Args:
         admin (Depends): va;ildate admin function which is imported from the core
-        1. 
+        1. Checking whether the user is Admin or not using the validate admin function
+        2. Creatign the try catch block which helps to handle the errors
+        3. Queried the DB and trying to retrieve all the users from DB
+        4. 
     """
     if not admin:
         raise HTTPException(
