@@ -133,4 +133,8 @@ def make_admins(
     except SQLAlchemyError as e:
         print(f"The Db error occurred: {e}")
 
-        raise 
+        raise HTTPException(
+            detail="Internal server error",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR0
+        )
+    
