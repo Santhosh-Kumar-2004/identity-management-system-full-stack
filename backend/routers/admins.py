@@ -93,4 +93,11 @@ def make_admins(
     admin = Depends(validate_admin),
     schema = RoleChangeRequest
 ):
-    pass
+    """Thisnis the endpoint which is used to create and convert the normal user into Admins, but only it can be done by another admin not by any noremal users/
+
+    Args:
+        user_id (str): _description_
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+        admin (_type_, optional): _description_. Defaults to Depends(validate_admin).
+        schema (_type_, optional): _description_. Defaults to RoleChangeRequest.
+    """
