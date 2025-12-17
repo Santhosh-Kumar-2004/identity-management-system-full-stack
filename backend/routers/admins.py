@@ -44,3 +44,9 @@ def get_all_users(
             detail="Internal Server Error in DB",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+    
+@router.get("/user/{user_id}", response_model=ResponseUser)
+def get_user_by_id(
+    db: Session = Depends(get_current_user),
+    admin = Depends(validate_admin)
+)
