@@ -1,6 +1,7 @@
 from fastapi import APIRouter, status, HTTPException, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
+from typing import List
 
 from helper.db_helper import get_db
 from engine.models import User
@@ -11,3 +12,15 @@ router = APIRouter(
     prefix="/admin",
     tags=["admin"]
 )
+
+@router.get("/all-users", response_model=List(ResponseUser))
+def get_all_users(
+    db: Session = Depends(get_db),
+    admin = Depends(validate_admin)
+):
+    """This endpoint used to retrieve
+
+    Args:
+        admin (Depends): _description_
+        db (Session, optional): _description_. Defaults to Depends(get_db).
+    """
