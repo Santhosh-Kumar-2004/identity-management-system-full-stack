@@ -228,7 +228,7 @@ def logout(
             status_code=status.HTTP_401_UNAUTHORIZED
         )
     
-    current_user = db.query(User).filter(User.email == user.email).lower().first()
+    current_user = db.query(User).filter(User.email == user.email).first()
 
     if not current_user:
         raise HTTPException(
@@ -240,7 +240,7 @@ def logout(
         current_user.is_logged = False
         db.add(current_user)
         db.commit()
-        db.refresh()
+        db.refresh(current_user)
 
     except SQLAlchemyError as e:
         db.rollback()
