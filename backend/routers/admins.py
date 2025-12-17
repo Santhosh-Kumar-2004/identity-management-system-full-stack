@@ -7,3 +7,7 @@ from engine.models import User
 from engine.schemas import CreateUser, UpdateUser, LoginUser, ResponseUser
 from auth.core import get_current_user, validate_admin
 
+router = APIRouter(
+    prefix="/admin",
+    tags=[]
+)
