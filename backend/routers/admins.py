@@ -153,4 +153,16 @@ def admin_logout(
     db: Session = Depends(get_db),
     current_user: ResponseUser = Depends(get_current_user)
 ):
-    pass
+    """This is the endpoint where the admin have the rights to make the user logout, Just making the logged in as False, not a Hard delete. 
+
+    1. 
+    """
+
+    if not admin:
+        raise HTTPException(
+            detail="You are not authorised to use this endpoint, Please contact the admin",
+            status_code=status.HTTP_400_BAD_REQUEST
+        )
+    
+    try:
+        user = db.query
