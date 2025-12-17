@@ -13,7 +13,7 @@ router = APIRouter(
     tags=["admin"]
 )
 
-@router.get("/all-users", response_model=ResponseUser)
+@router.get("/all-users")
 def get_all_users(
     db: Session = Depends(get_db),
     admin = Depends(validate_admin)
@@ -37,7 +37,7 @@ def get_all_users(
     try:
         users = db.query(User).all()
 
-        return [ResponseUser.model_validate(user) for user in users]
+        return users
 
     except SQLAlchemyError as e:
         print(f"The error occcurred in get all users: {e}")
