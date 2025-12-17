@@ -277,3 +277,5 @@ def delete_user(
         }
 
     except Exception as e:
+        print(f"Error occurred when deleting the user: {e}")
+        
