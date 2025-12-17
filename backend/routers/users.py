@@ -102,7 +102,8 @@ def login(
     
     try:
         existing_user.is_logged = True
-        db.commit(existing_user)
+        db.add(existing_user)
+        db.commit()
 
         access_token = create_token(data={"sub": user.email})
 
