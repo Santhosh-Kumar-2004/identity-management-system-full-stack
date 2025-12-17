@@ -278,7 +278,7 @@ def delete_user(
         )
     
     try:
-        user = db.query(User).filter(User.email == current_user.user_  ).first()
+        user = db.query(User).filter(User.id == user_id).first()
 
         if not user:
             raise HTTPException(
