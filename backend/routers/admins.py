@@ -96,8 +96,8 @@ def make_admins(
     """Thisnis the endpoint which is used to create and convert the normal user into Admins, but only it can be done by another admin not by any noremal users/
 
     Args:
-        user_id (str): _description_
-        db (Session, optional): _description_. Defaults to Depends(get_db).
-        admin (_type_, optional): _description_. Defaults to Depends(validate_admin).
-        schema (_type_, optional): _description_. Defaults to RoleChangeRequest.
+        user_id (str): This is used to select the particular user with id
+        db (Session, optional): This helps to query the db 
+        admin (_type_, optional): validate admin func used to check for the admin authoriation
+        schema (_type_, optional): This is the schema used to validate the request
     """
