@@ -271,3 +271,9 @@ def delete_user(
         
         db.delete(user)
         db.commit()
+
+        return {
+            "Detail": f"User deleted successfully: {user}"
+        }
+
+    except Exception as e:
