@@ -177,3 +177,21 @@ def admin_logout(
         db.add(user)
         db.commit()
         db.refresh(user)
+
+        return ResponseUser.model_validate(user)
+
+    except SQLAlchemyError as e:
+        print(f"The Db error occurred: {e}")
+
+        raise HTTPException(
+            detail="Internal server error",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR0
+        )
+    
+    except Exception as a:
+        print(f"The Pythons common error occurred: {e}")
+
+        raise HTTPException(
+            detail="Not a DB error, Instead internal",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
