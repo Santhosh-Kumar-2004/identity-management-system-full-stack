@@ -4,9 +4,10 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from helper.db_helper import get_db
 from engine.models import User
+from auth.core import get_current_user
+
 from engine.schemas import CreateUser, LoginUser, UpdateUser, ResponseUser
 from auth.core import hash_password, verify_password, create_token, decode_token
-from auth.core import get_current_user
 
 router = APIRouter(
     prefix="/auth", 
@@ -107,7 +108,10 @@ def login(
 
     except SQLAlchemyError as e:    
         db.rollback()
-        print(f"The error {e}")
+        print(
+            f"The error {e}"
+        )
+        
         raise HTTPException(
             detail="Unexpected error Occured, This isn't common.",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
@@ -135,7 +139,9 @@ def current_user(
         )
 
     try:
-        print(f"Here is the Current User Details: {user}")
+        print(
+            f"Here is the Current User Details: {user}"
+        )
         return user
     
     except SQLAlchemyError as e:
@@ -287,6 +293,7 @@ def delete_user(
 
     except Exception as e:
         print(f"Error occurred when deleting the user: {e}")
+
         raise HTTPException(
             detail="Internal server error",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
