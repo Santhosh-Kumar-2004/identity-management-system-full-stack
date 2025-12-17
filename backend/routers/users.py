@@ -257,7 +257,7 @@ def delete_user(
     if not user_id:
         raise HTTPException(
             detail="User ID not found, Please login to get one",
-            status_code=status.HTTP_404_NOT_FOUND
+            status_code=status.HTTP_400_BAD_REQUEST
         )
     
     try:
@@ -268,3 +268,7 @@ def delete_user(
                 detail="User Not found! Please register to login",
                 status_code=status.HTTP_404_NOT_FOUND
             )
+        
+        db.delete(user)
+        db.commit()
+        db.refresh()
