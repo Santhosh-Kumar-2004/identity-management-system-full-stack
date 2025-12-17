@@ -255,7 +255,8 @@ def logout(
 @router.delete("/user/{user_id}")
 def delete_user(
     user_id: str,
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)
 ):
     """THis is the final endpoint for the user, which make the user to delete in a Hard Way from Db
 
@@ -277,7 +278,7 @@ def delete_user(
         )
     
     try:
-        user = db.query(User).filter(User.id == user_id).first()
+        user = db.query(User).filter(User.email == current_user.user_  ).first()
 
         if not user:
             raise HTTPException(
