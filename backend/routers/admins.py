@@ -26,6 +26,7 @@ def get_all_users(
     """
 
     try:
-        pass
+        user = db.query(User).all()
+
     except SQLAlchemyError as e:
         pass
