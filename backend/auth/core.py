@@ -59,17 +59,17 @@ def decode_token(token: str):
         
 
 def get_current_user(
-        authorisation: str = Header(None),
+        authorization: str = Header(None, alias="Authorization"),
         db: Session = Depends(get_db),
 ):
-    if not authorisation or not authorisation.lower().startswith("Bearer "):
+    if not authorization or not authorization.lower().startswith("Bearer "):
         raise HTTPException(
             detail="Authorisation is not found 0_0",
             headers= {"WWW-Authenticate": "bearer"},
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
-    token = authorisation.split(" ", 1)[1].strip()
+    token = authorization.split(" ", 1)[1].strip()
     payload = decode_token(token=token)
 
     email_id = payload.get("sub")
