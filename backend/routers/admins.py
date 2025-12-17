@@ -5,7 +5,7 @@ from typing import List
 
 from helper.db_helper import get_db
 from engine.models import User
-from engine.schemas import CreateUser, UpdateUser, LoginUser, ResponseUser
+from engine.schemas import CreateUser, UpdateUser, LoginUser, ResponseUser, UserRole
 from auth.core import get_current_user, validate_admin
 from engine.schemas import RoleChangeRequest
 
@@ -116,3 +116,11 @@ def make_admins(
                 detail="User not Found, Please register",
                 status_code=status.HTTP_404_NOT_FOUND
             )
+
+        if user.role == UserRole.admin and schema.role != UserRole.admin:
+            counting_admins = db.query(User).filter(User.role == UserRole.admin).count()
+            if counting_admins <= 1:
+                raise HTTPException(
+                    detail="Can not delete the last Admin",
+                    status_code=status.HTTP_400_BAD_REQUEST
+                )
