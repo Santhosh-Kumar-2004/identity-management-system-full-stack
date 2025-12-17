@@ -54,5 +54,10 @@ def get_user_by_id(
 
     Args:
         1. Imported db depend on the get_db session Local
-        2. 
+        2. validating the user, Admin or not
     """
+
+    if not admin:
+        raise HTTPException(
+            
+        )
