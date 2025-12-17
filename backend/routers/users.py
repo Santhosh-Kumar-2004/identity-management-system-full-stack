@@ -33,7 +33,7 @@ def register(
         6. finally returned the ResponseUser with the respective created user
     """
 
-    existing_user = db.query(User).filter(User.email == user.email).lower().first()
+    existing_user = db.query(User).filter(User.email == user.email).first()
     if existing_user:
         raise HTTPException(
             detail="User Already Registered - Login Now!",
@@ -86,7 +86,7 @@ def login(
         6. Finally returning the Access tokenw itht ehtype of the token
     """
 
-    existing_user = db.query(User).filter(User.email == user.email).lower().first()
+    existing_user = db.query(User).filter(User.email == user.email).first()
 
     if not existing_user:
         raise HTTPException(
