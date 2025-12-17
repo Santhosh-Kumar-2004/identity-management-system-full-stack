@@ -145,3 +145,6 @@ def make_admins(
             detail="Not a DB error, Instead internal",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+
+@router.post("/logout")

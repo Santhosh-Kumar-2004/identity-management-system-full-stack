@@ -67,7 +67,7 @@ def register(
     return ResponseUser.model_validate(creating_user)
 
 
-@router.post("/login")
+@router.post("/login", response_model=dict)
 def login(
     user: LoginUser,
     db: Session = Depends(get_db)
@@ -111,7 +111,7 @@ def login(
         print(
             f"The error {e}"
         )
-        
+
         raise HTTPException(
             detail="Unexpected error Occured, This isn't common.",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
