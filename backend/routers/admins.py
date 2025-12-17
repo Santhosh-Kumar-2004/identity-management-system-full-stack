@@ -47,6 +47,12 @@ def get_all_users(
     
 @router.get("/user/{user_id}", response_model=ResponseUser)
 def get_user_by_id(
-    db: Session = Depends(get_current_user),
+    db: Session = Depends(get_db),
     admin = Depends(validate_admin)
-)
+):
+    """This is the endpoint which helps retrieveing the particular user using their id
+
+    Args:
+        1. Imported db depend on the get_db session Local
+        2. 
+    """
