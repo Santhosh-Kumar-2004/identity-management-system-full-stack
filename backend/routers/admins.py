@@ -172,3 +172,8 @@ def admin_logout(
                 detail="User not found, Please register.",
                 status_code=status.HTTP_404_NOT_FOUND
             )
+        
+        user.is_logged == False
+        db.add(user)
+        db.commit()
+        db.refresh(user)
