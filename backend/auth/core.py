@@ -90,7 +90,7 @@ def get_current_user(
 
     if not user.is_logged:
         raise HTTPException(
-            detail="Please log in Session Expired",
+            detail="Please log in, Session Expired",
             status_code=status.HTTP_401_UNAUTHORIZED
         )
 
