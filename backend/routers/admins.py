@@ -148,3 +148,9 @@ def make_admins(
 
 
 @router.post("/logout")
+def admin_logout(
+    admin = Depends(validate_admin), 
+    db: Session = Depends(get_db),
+    current_user: ResponseUser = Depends(get_current_user)
+):
+    pass
