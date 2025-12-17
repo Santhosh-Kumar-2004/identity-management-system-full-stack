@@ -88,7 +88,7 @@ def get_user_by_id(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
     
-@router.put("/user/{user_id}/role", response_model=ResponseUser)
+@router.put("/user/{user_id}/role")
 def make_admins(
     user_id: str,
     db: Session = Depends(get_db),
@@ -136,18 +136,20 @@ def make_admins(
         db.commit()
         db.refresh(user)
 
-        return ResponseUser.model_validate(user)
+        return {
+            "detail": f"User {user.id} became admin successfully!" 
+        }
 
     except SQLAlchemyError as e:
         print(f"The Db error occurred: {e}")
 
         raise HTTPException(
             detail="Internal server error",
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR0
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
     
     except Exception as a:
-        print(f"The Pythons common error occurred: {e}")
+        print(f"The Pythons common error occurred: {a}")
 
         raise HTTPException(
             detail="Not a DB error, Instead internal",
