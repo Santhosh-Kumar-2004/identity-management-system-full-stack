@@ -54,6 +54,7 @@ def get_user_by_id(
     """This is the endpoint which helps retrieveing the particular user using their id
 
     Args:
+        0. Created user_id input and assinged it to String
         1. Imported db depend on the get_db session Local
         2. validating the user, Admin or not
     """
@@ -65,7 +66,7 @@ def get_user_by_id(
         )
     
     try:
-        user = db.query(User).filter(User.id == user_)
+        user = db.query(User).filter(User.id == user_id)
 
     except:
         pass
