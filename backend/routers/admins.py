@@ -36,4 +36,4 @@ def get_all_users(
         return [ResponseUser.model_validate(user) for user in users]
 
     except SQLAlchemyError as e:
-        pass
+        print(f"The error occcurred in get all users: {e}")
