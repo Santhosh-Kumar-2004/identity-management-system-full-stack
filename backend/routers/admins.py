@@ -7,7 +7,7 @@ from helper.db_helper import get_db
 from engine.models import User
 from engine.schemas import CreateUser, UpdateUser, LoginUser, ResponseUser
 from auth.core import get_current_user, validate_admin
-from engine
+from engine.schemas import RoleChangeRequest
 
 router = APIRouter(
     prefix="/admin",
