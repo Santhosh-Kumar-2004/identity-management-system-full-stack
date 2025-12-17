@@ -13,7 +13,7 @@ router = APIRouter(
     tags=["admin"]
 )
 
-@router.get("/all-users", response_model=list(ResponseUser))
+@router.get("/all-users", response_model=ResponseUser)
 def get_all_users(
     db: Session = Depends(get_db),
     admin = Depends(validate_admin)
