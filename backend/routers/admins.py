@@ -124,3 +124,7 @@ def make_admins(
                     detail="Cannot delete the last Admin",
                     status_code=status.HTTP_400_BAD_REQUEST
                 )
+            
+        user.role = schema.role
+        db.add(user)
+        db.commit()
