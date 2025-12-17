@@ -248,6 +248,8 @@ def delete_user(
     """THis is the final endpoint for the user, which make the user to delete in a Hard Way from Db
 
     Args:
-        user_id (str): _description_
-        db (Session, optional): _description_. Defaults to Depends(get_db).
+        user_id (str): To select the particular user who wanna drop from us
+        db (Session, Depends on get_db sessionLocal func)
+
+        1. 
     """
