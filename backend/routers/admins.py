@@ -7,6 +7,7 @@ from helper.db_helper import get_db
 from engine.models import User
 from engine.schemas import CreateUser, UpdateUser, LoginUser, ResponseUser
 from auth.core import get_current_user, validate_admin
+from engine
 
 router = APIRouter(
     prefix="/admin",
@@ -84,5 +85,4 @@ def get_user_by_id(
             detail="Internal servie error: 500*",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
-    
     
