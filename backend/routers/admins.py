@@ -27,7 +27,7 @@ def get_all_users(
     if not admin:
         raise HTTPException(
             detail="You are not allowed to access this page, Please contact admin",
-            
+            status_code=status.HTTP_403_FORBIDDEN
         )
 
     try:
