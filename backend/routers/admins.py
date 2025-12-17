@@ -22,6 +22,7 @@ def get_all_users(
 
     Args:
         admin (Depends): va;ildate admin function which is imported from the core
+
         1. Checking whether the user is Admin or not using the validate admin function
         2. Creatign the try catch block which helps to handle the errors
         3. Queried the DB and trying to retrieve all the users from DB
@@ -55,6 +56,8 @@ def get_user_by_id(
     """This is the endpoint which helps retrieveing the particular user using their id
 
     Args:
+        user id is an str, db session and admin inout to validate
+        
         0. Created user_id input and assinged it to String
         1. Imported db depend on the get_db session Local
         2. validating the user, Admin or not
