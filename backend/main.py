@@ -22,3 +22,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_header=["*"]
 )
+
+app.include_router(user_routes)
+app.include_router(admin_routes)
+
+@app.get("/root-route")
+def root_router():
+    
+    """This is the root, Just created to test the endpoint
+    """
+    return "The endpoint and app is running perfectly!"
