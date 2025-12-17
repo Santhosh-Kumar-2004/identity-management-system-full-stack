@@ -251,7 +251,7 @@ def delete_user(
         user_id (str): To select the particular user who wanna drop from us
         db (Session, Depends on get_db sessionLocal func)
 
-        1. 
+        1. First of all checking whther the user_id is exist or not using an if consition
     """
 
     if not user_id:
@@ -278,4 +278,7 @@ def delete_user(
 
     except Exception as e:
         print(f"Error occurred when deleting the user: {e}")
-        
+        raise HTTPException(
+            detail="Internal server error",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
