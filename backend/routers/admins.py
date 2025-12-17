@@ -18,9 +18,9 @@ def get_all_users(
     db: Session = Depends(get_db),
     admin = Depends(validate_admin)
 ):
-    """This endpoint used to retrieve
+    """This endpoint used to retrieve all the users by admins and returns as List frm typing
 
     Args:
-        admin (Depends): _description_
-        db (Session, optional): _description_. Defaults to Depends(get_db).
+        admin (Depends): va;ildate admin function which is imported from the core
+        1. 
     """
