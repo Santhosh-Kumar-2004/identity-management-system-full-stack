@@ -31,7 +31,9 @@ def get_all_users(
         )
 
     try:
-        user = db.query(User).all()
+        users = db.query(User).all()
+
+        return [ResponseUser.model_validate(user) for user in users]
 
     except SQLAlchemyError as e:
         pass
