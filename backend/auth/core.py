@@ -14,7 +14,7 @@ load_dotenv() # here the env gets loaded
 
 SECURITY_KEY = os.getenv("JWT_SECRET")
 ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
-ALGORITHM = os.getenv("ALGORTHIM")
+ALGORITHM = os.getenv("ALGORITHM")
 
 # pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
