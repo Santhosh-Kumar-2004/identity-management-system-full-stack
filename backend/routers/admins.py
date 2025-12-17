@@ -107,3 +107,12 @@ def make_admins(
             detail="User id not found, Please log in first",
             status_code=status.HTTP_400_BAD_REQUEST
         )
+    
+    try:
+        user = db.query(User).filter(User.id == user_id).first()
+
+        if not user:
+            raise HTTPException(
+                detail="User not Found, Please register",
+                status_code=status.HTTP_404_NOT_FOUND
+            )
