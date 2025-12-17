@@ -12,3 +12,6 @@ app = FastAPI(
     description="The simple and the second version of the User Management system",
     version="2.1.0"
 )
+
+Base.metadata.create_all(bind=engine)
+
