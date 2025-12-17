@@ -98,7 +98,13 @@ def make_admins(
     """This is the endpoint which is used to create and convert the normal user into Admins, but only it can be done by another admin not by any noremal users/
 
     Args:
-        user_id which is an str, 
+        user_id which is an str
+        db which is depeds on the get_db
+        admin validation
+        finally the schema
+
+        1. First we are checking for the admin role
+        2. 
     """
 
     if not admin:
