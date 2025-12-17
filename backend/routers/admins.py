@@ -74,6 +74,11 @@ def get_user_by_id(
                 detail="User is not Foundable, Please login to get new ID",
                 status_code=status.HTTP_404_NOT_FOUND
             )
+        
+        return ResponseUser.model_validate(user)
 
-    except:
-        pass
+    except as e:
+        print(f"One error occurred at the get user by id: {e}")
+        raise HTTPException(
+            detail=""
+        )
