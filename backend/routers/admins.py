@@ -71,8 +71,8 @@ def get_user_by_id(
 
         if not user:
             raise HTTPException(
-                detail="User is not authenticated, Please login to get new ID",
-                status_code=status.HTTP_401_UNAUTHORIZED
+                detail="User is not Foundable, Please login to get new ID",
+                status_code=status.HTTP_404_NOT_FOUND
             )
 
     except:
