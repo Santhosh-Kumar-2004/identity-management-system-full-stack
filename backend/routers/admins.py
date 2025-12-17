@@ -90,6 +90,7 @@ def get_user_by_id(
 def make_admins(
     user_id: str,
     db: Session = Depends(get_db),
-    
+    admin = Depends(validate_admin),
+    schema = RoleChangeRequest
 ):
     pass
