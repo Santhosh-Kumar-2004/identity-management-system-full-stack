@@ -8,7 +8,10 @@ from engine.schemas import CreateUser, LoginUser, UpdateUser, ResponseUser
 from auth.core import hash_password, verify_password, create_token, decode_token
 from auth.core import get_current_user
 
-router = APIRouter(prefix="/auth", tags=["auth"])
+router = APIRouter(
+    prefix="/auth", 
+    tags=["auth"]
+)
 
 @router.post("/register", response_model=ResponseUser, status_code=status.HTTP_201_CREATED)
 def register(
