@@ -165,4 +165,10 @@ def admin_logout(
         )
     
     try:
-        user = db.query
+        user = db.query(User).filter(User.id == current_user.id).first()
+
+        if not user:
+            raise HTTPException(
+                detail="User not found, Please register.",
+                status_code=status.HTTP_404_NOT_FOUND
+            )
