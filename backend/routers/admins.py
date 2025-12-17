@@ -9,5 +9,5 @@ from auth.core import get_current_user, validate_admin
 
 router = APIRouter(
     prefix="/admin",
-    tags=[]
+    tags=["admin"]
 )
