@@ -252,6 +252,9 @@ def delete_user(
         db (Session, Depends on get_db sessionLocal func)
 
         1. First of all checking whther the user_id is exist or not using an if consition
+        2. Created the try except block to handle the unexcepted error occurance
+        3. Querying the db to get the particular user from the db to delete
+        4. Checking user existence and finally deleting him Hardly.
     """
 
     if not user_id:
