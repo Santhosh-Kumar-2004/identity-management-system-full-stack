@@ -128,3 +128,9 @@ def make_admins(
         user.role = schema.role
         db.add(user)
         db.commit()
+        db.refresh(user)
+
+    except SQLAlchemyError as e:
+        print(f"The Db error occurred: {e}")
+
+        raise 
