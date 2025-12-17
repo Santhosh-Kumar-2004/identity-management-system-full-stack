@@ -239,6 +239,7 @@ def logout(
             detail="Internal Server Error",
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+    
 
 @router.delete("/user/{user_id}")
 def delete_user(
@@ -255,6 +256,7 @@ def delete_user(
         2. Created the try except block to handle the unexcepted error occurance
         3. Querying the db to get the particular user from the db to delete
         4. Checking user existence and finally deleting him Hardly.
+        5. Except block handling all kinda errors
     """
 
     if not user_id:
