@@ -121,6 +121,6 @@ def make_admins(
             counting_admins = db.query(User).filter(User.role == UserRole.admin).count()
             if counting_admins <= 1:
                 raise HTTPException(
-                    detail="Can not delete the last Admin",
+                    detail="Cannot delete the last Admin",
                     status_code=status.HTTP_400_BAD_REQUEST
                 )
