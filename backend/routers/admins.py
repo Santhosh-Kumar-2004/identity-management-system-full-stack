@@ -136,6 +136,8 @@ def make_admins(
         db.commit()
         db.refresh(user)
 
+        return ResponseUser.model_validate(user)
+
     except SQLAlchemyError as e:
         print(f"The Db error occurred: {e}")
 
