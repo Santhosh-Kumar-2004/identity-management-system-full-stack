@@ -29,3 +29,6 @@ class ResponseUser(BaseModel):
     model_config = {
         "from_attributes": True
     }
+
+class RoleChangeRequest(BaseModel):
+    role: UserRole
