@@ -37,3 +37,7 @@ def get_all_users(
 
     except SQLAlchemyError as e:
         print(f"The error occcurred in get all users: {e}")
+        raise HTTPException(
+            detail="Internal Server Error in DB",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
