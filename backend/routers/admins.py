@@ -77,7 +77,7 @@ def get_user_by_id(
         
         return ResponseUser.model_validate(user)
 
-    except as e:
+    except SQLAlchemyError as e:
         print(f"One error occurred at the get user by id: {e}")
         raise HTTPException(
             detail=""
