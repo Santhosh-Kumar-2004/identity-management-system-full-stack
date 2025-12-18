@@ -24,3 +24,15 @@ Frontend Website (E-commerce UI)
 
 🧭 FRONTEND ROUTES (Final)
 🌍 Public Routes
+/               → Home
+/about          → About
+/contact        → Contact
+/products       → Products (mock)
+/login          → Login
+/register       → Register
+
+-----------------------------------
+
+🔐 User Protected Routes
+/profile        → Current user profile
+/profile/edit   → Update user
