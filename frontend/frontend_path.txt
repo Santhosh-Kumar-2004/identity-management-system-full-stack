@@ -121,3 +121,12 @@ Call /auth/user
 Set user in AuthContext
 ↓
 Allow protected routes
+
+----------------------------------
+
+On page refresh:
+Check token
+↓
+Call /auth/user
+↓
+Restore session
