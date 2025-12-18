@@ -1,0 +1,21 @@
+🧠 Architecture (Big Picture)
+
+Frontend Website (E-commerce UI)
+├── Public pages (NO backend)
+│   ├── Home
+│   ├── About
+│   ├── Contact
+│   ├── Products (mock)
+│
+├── Auth pages (Backend connected)
+│   ├── Login
+│   ├── Register
+│
+├── User pages (Protected)
+│   ├── Profile
+│   ├── Update Profile
+│
+└── Admin pages (RBAC Protected)
+    ├── All Users
+    ├── View User
+    ├── Change Role
