@@ -42,3 +42,22 @@ Frontend Website (E-commerce UI)
 🛡 Admin Protected Routes
 /admin/users            → All users
 /admin/users/:id        → User detail
+
+----------------------------------------------------------------
+Auth APIs → UI Actions
+| Backend Route          | Frontend Action      |
+| ---------------------- | -------------------- |
+| POST /auth/login       | Login form submit    |
+| POST /auth/register    | Register form        |
+| GET /auth/user         | Load user on refresh |
+| PUT /auth/update-user  | Edit profile         |
+| POST /auth/logout      | Logout button        |
+| DELETE /auth/user/{id} | Delete own account   |
+
+Admin APIs → UI Actions
+| Backend Route             | UI                |
+| ------------------------- | ----------------- |
+| GET /admin/all-users      | Admin users table |
+| GET /admin/user/{id}      | View user         |
+| PUT /admin/user/{id}/role | Role dropdown     |
+| DELETE /auth/user/{id}    | Delete user       |
