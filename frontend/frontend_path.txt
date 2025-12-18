@@ -104,3 +104,20 @@ src/
 │
 ├── App.jsx
 └── main.jsx
+
+-----------------------------------------------------------------
+
+🧠 Auth Flow (IMPORTANT)
+Register
+↓
+Login
+↓
+Receive token
+↓
+Store token (localStorage)
+↓
+Call /auth/user
+↓
+Set user in AuthContext
+↓
+Allow protected routes
