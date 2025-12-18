@@ -19,3 +19,8 @@ Frontend Website (E-commerce UI)
     ├── All Users
     ├── View User
     ├── Change Role
+
+-------------------------------------------------------------
+
+🧭 FRONTEND ROUTES (Final)
+🌍 Public Routes
