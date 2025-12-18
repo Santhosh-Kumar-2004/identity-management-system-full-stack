@@ -36,3 +36,9 @@ Frontend Website (E-commerce UI)
 🔐 User Protected Routes
 /profile        → Current user profile
 /profile/edit   → Update user
+
+-----------------------------------
+
+🛡 Admin Protected Routes
+/admin/users            → All users
+/admin/users/:id        → User detail
