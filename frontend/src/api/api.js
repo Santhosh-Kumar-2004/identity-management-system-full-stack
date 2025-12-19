@@ -5,3 +5,7 @@ const BASE_URL = "http://localhost:8000"
 export const getToken = () => {
     return localStorage.getItem("token");   
 }
+
+export const setToken = () => {
+    return localStorage.setItem("token", token);
+}
