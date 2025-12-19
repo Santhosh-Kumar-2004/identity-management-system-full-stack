@@ -10,4 +10,6 @@ export const getToken = () => {
     return localStorage.getItem("token");   
 }
 
-export const removeItwm = ()
+export const removeItwm = () => {
+    return localStorage.removeItem("token");
+}
