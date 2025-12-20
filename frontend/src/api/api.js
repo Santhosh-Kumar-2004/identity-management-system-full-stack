@@ -85,3 +85,10 @@ export const getUserById = (userId) => {
         method: "GET",
     })
 }
+
+export const updateUserRole = (userId, role) => {
+    return request(`admin/user/${userId}/role`, {
+        method: "PUT",
+        body: JSON.stringify({ role })
+    })
+}
