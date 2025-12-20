@@ -75,5 +75,7 @@ export const logoutUser = () => {
 // Admin related functions
 
 export const getAllUsers = () => {
-    
+    return request("admin/all-users", {
+        method: "GET",
+    })
 }
