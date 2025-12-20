@@ -9,7 +9,7 @@ export const getToken = () => {
     return localStorage.getItem("token");   
 }
 
-export const removeItwm = () => {
+export const removeToken = () => {
     return localStorage.removeItem("token");
 }
 
@@ -68,5 +68,6 @@ export const updateUser = (data) => {
 export const logoutUser = () => {
     return request("auth/logout", {
         method: "POST",
+        removeItem()
     })
 }
