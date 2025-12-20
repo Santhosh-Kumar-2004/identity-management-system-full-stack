@@ -23,7 +23,7 @@ const request = async (endpoint, options = {}) => {
         ...(token && { Authorization: `bearer ${token}`})
     }
 
-    const response = await (`${BASE_URL}${endpoint}`, {
+    const response = await fetch(`${BASE_URL}${endpoint}`, {
         ...options,
         headers,
     });
