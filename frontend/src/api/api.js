@@ -22,4 +22,9 @@ const request = async (endpoint, options = {}) => {
         "Content-type": "application/json",
         ...(token && { Authorization: `bearer ${token}`})
     }
-}
+
+    const response = await (`${BASE_URL}${endpoint}`, {
+        ...options,
+        headers,
+    });
+}   
