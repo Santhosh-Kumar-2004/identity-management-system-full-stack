@@ -14,3 +14,5 @@ export const removeItwm = () => {
 }
 
 // Backend communicating function (Main)
+
+const request = async (endpoint, options = {})
