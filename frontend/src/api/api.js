@@ -44,3 +44,10 @@ export const loginUser = (data) => {
         body: JSON.stringify(data)
     })
 }
+
+export const registerUser = (data) => {
+    return request("auth/register", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+}
