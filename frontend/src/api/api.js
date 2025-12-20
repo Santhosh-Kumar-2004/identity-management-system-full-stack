@@ -71,3 +71,9 @@ export const logoutUser = () => {
         method: "POST",
     })
 }
+
+// Admin related functions
+
+export const getAllUsers = () => {
+    
+}
