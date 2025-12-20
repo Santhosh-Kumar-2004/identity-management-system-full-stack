@@ -27,4 +27,11 @@ const request = async (endpoint, options = {}) => {
         ...options,
         headers,
     });
+
+    if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.detail() || "Request Failed, Try Again...")
+    }
+
+    return response.json()
 }   
