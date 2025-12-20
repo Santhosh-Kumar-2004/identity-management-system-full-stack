@@ -79,3 +79,9 @@ export const getAllUsers = () => {
         method: "GET",
     })
 }
+
+export const getUserById = (userId) => {
+    return request(`admin/users/${userId}`, {
+        method: "GET",
+    })
+}
