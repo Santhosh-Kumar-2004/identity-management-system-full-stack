@@ -51,3 +51,9 @@ export const registerUser = (data) => {
         body: JSON.stringify(data)
     })
 }
+
+export const getCurrentUser = () => {
+    return request("auth/user", {
+        method: "GET",
+    })
+}
