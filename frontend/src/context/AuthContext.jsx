@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, createContext } from "react"; 
+import { useState, useEffect, useContext, createContext, Children } from "react"; 
 import { 
     loginUser,
     registerUser,
@@ -10,3 +10,9 @@ import {
 
 export const AuthContext = createContext(null)
 
+export const AuthProvider = ({ children }) => {
+
+    const [user, setUser] = useState(null)
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+}
