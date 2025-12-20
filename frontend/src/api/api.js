@@ -35,3 +35,12 @@ const request = async (endpoint, options = {}) => {
 
     return response.json();
 }   
+
+// Auth related functions
+
+export const loginUser = (data) => {
+    return request("/auth/login", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+}
