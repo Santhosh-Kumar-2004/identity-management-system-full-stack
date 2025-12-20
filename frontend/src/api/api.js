@@ -20,6 +20,6 @@ const request = async (endpoint, options = {}) => {
 
     const headers = {
         "Content-type": "application/json",
-        
+        ...(token && { Authorization: `bearer ${token}`})
     }
 }
