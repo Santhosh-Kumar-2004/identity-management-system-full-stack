@@ -66,8 +66,8 @@ export const updateUser = (data) => {
 }
 
 export const logoutUser = () => {
+    removeToken()
     return request("auth/logout", {
         method: "POST",
-        removeItem()
     })
 }
