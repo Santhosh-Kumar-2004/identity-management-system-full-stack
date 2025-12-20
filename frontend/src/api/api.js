@@ -33,5 +33,5 @@ const request = async (endpoint, options = {}) => {
         throw new Error(errorData.detail() || "Request Failed, Try Again...")
     }
 
-    return response.json()
+    return response.json();
 }   
