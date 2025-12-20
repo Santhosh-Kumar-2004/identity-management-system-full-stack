@@ -7,3 +7,6 @@ import {
     removeToken,
     updateUser
 } from "../api/api";
+
+export const AuthContext = createContext(null)
+
