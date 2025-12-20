@@ -57,3 +57,10 @@ export const getCurrentUser = () => {
         method: "GET",
     })
 }
+
+export const updateUser = (data) => {
+    return request("auth/update-user", {
+        method: "PUT",
+        body: JSON.stringify(data)
+    })
+}
