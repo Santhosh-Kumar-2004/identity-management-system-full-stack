@@ -15,4 +15,11 @@ export const removeItwm = () => {
 
 // Backend communicating function (Main)
 
-const request = async (endpoint, options = {})
+const request = async (endpoint, options = {}) => {
+    const token = getToken();
+
+    const headers = {
+        "Content-type": "application/json",
+        
+    }
+}
