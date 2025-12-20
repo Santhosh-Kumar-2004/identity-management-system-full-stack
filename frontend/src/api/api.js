@@ -64,3 +64,9 @@ export const updateUser = (data) => {
         body: JSON.stringify(data)
     })
 }
+
+export const logoutUser = () => {
+    return request("auth/logout", {
+        method: "POST",
+    })
+}
