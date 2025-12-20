@@ -72,6 +72,12 @@ export const logoutUser = () => {
     })
 }
 
+export const deleteUser = (userId) => {
+    return request(`auth/user/${userId}`, {
+        method: "DELETE",
+    })
+}
+
 // Admin related functions
 
 export const getAllUsers = () => {
