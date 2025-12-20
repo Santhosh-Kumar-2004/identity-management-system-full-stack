@@ -92,3 +92,7 @@ export const updateUserRole = (userId, role) => {
         body: JSON.stringify({ role })
     })
 }
+
+export const adminLogoutUser = () => {
+    removeToken()
+}
