@@ -34,5 +34,18 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(false)
         setUser(null)
     }
+
+    useEffect(() => {
+        const loadUser = async () => {
+            try {
+                const userData = await getCurrentUser()
+            } catch (error) {
+                
+            } finally {
+
+            }
+        }
+    })
 }
+
 
