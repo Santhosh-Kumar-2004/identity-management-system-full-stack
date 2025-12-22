@@ -40,6 +40,15 @@ function App() {
         />
 
         {/* admin route pages are here */}
+        <Route
+          path='/all-users'
+          element={
+            <AdminRoute>
+              <AllUsers />
+            </AdminRoute>
+          } 
+        
+        />
         
       </Routes>
     </>
