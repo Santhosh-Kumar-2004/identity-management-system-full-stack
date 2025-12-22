@@ -4,4 +4,12 @@ import { Navigate } from "react-router";
 
 const ProtectedRoute = ({ children }) => {
     const {loading, isAuthenticated }= useContext(AuthContext)
+
+    if (loading) {
+        return <p>The App is Loading...</p>
+    }
+
+    if (!isAuthenticated) {
+        Navigate("/login")
+    }
 }
