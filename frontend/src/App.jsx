@@ -6,13 +6,17 @@ import AdminRoute from './routes/AdminRoute'
 
 import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
+import Home from './pages/public/Home'
+import AllUsers from './pages/admin/UserDetails'
 
 
 function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <Routes>
+
+      </Routes>
     </>
   )
 }
