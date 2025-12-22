@@ -47,7 +47,6 @@ function App() {
               <AllUsers />
             </AdminRoute>
           } 
-        
         />
         
       </Routes>
