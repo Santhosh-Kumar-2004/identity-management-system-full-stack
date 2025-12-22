@@ -6,7 +6,7 @@ import { getToken } from "../api/api";
 const ProtectedRoute = ({ children }) => {
     const {loading, isAuthenticated }= useContext(AuthContext)
 
-    if (!getToken) {
+    if (!getToken()) {
         return <Navigate to="/login" replace/>
     }
 
