@@ -32,9 +32,14 @@ function App() {
 
         <Route 
           path='/profile'
-          elem
-        
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
         />
+
+        {/* admin route pages are here */}
         
       </Routes>
     </>
