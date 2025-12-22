@@ -45,10 +45,12 @@ export const AuthProvider = ({ children }) => {
                 setUser(null)
                 setIsAuthenticated(false)
             } finally {
-
+                setLoading(false)
             }
         }
-    })
+
+        loadUser()
+    }, [])
 }
 
 
