@@ -8,6 +8,7 @@ import Login from './pages/auth/Login'
 import Register from './pages/auth/Register'
 import Home from './pages/public/Home'
 import AllUsers from './pages/admin/UserDetails'
+import Profile from './pages/user/Profile'
 
 
 function App() {
@@ -18,6 +19,22 @@ function App() {
         {/* public auth Pages */}
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+
+        {/* prontected route pages */}
+        <Route 
+          path='/'
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route 
+          path='/profile'
+          elem
+        
+        />
         
       </Routes>
     </>
