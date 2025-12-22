@@ -15,4 +15,18 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
 
     const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+    const [loading, setLoading] = useState(true)
+
+    const login = async (email, password) => {
+        const response = loginUser({ email, password })
+
+        setToken(response.access_token)
+
+        const userData = getCurrentUser()
+
+        setUser(userData)
+        setIsAuthenticated(true)
+    }
 }
+
