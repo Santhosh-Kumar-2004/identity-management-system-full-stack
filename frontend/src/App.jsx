@@ -15,7 +15,10 @@ function App() {
   return (
     <>
       <Routes>
-
+        {/* public auth Pages */}
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        
       </Routes>
     </>
   )
