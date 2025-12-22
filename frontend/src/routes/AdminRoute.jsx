@@ -10,7 +10,7 @@ const AdminRoute = ({ children }) => {
     }
 
     if (!isAuthenticated) {
-        return <Navigate to="/register" replace/>
+        return <Navigate to="/login" replace/>
     }
 
     if (user?.role !== "admin") {
