@@ -28,5 +28,11 @@ export const AuthProvider = ({ children }) => {
         setUser(userData)
         setIsAuthenticated(true)
     }
+
+    const logout = () => {
+        removeToken()
+        setIsAuthenticated(false)
+        setUser(null)
+    }
 }
 
