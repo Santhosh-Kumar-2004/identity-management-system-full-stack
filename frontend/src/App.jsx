@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router'
 
-// import ProtectedRoute from './routes/ProtectedRoute'
-// import AdminRoute from './routes/AdminRoute'
+import ProtectedRoute from './routes/ProtectedRoute'
+import AdminRoute from './routes/AdminRoute'
 
 import Login from './pages/auth/Login'
 // import Register from './pages/auth/Register'
