@@ -5,6 +5,7 @@ import {
     setToken,
     removeToken,
 } from "../api/api";
+import { AuthContext } from "./AuthContext";
 
 export const AuthProvider = ({ children }) => {
 
