@@ -37,9 +37,10 @@ export const AuthProvider = ({ children }) => {
                 const userData = await getCurrentUser()
                 setUser(userData)
                 setIsAuthenticated(true)
-            } catch () {
+            } catch (error) {
                 setUser(null)
                 setIsAuthenticated(false)
+                console.log(error)
             } finally {
                 setLoading(false)
             }
