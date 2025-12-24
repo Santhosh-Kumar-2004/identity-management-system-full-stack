@@ -67,7 +67,7 @@ Database design (conceptual blueprint & decisions you must make)
     
 
 Backend design (architecture & API contracts — no code)
-=======================================================
+==========================================================
 
 ### Architectural layers (conceptual)
 
