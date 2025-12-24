@@ -1,7 +1,7 @@
 const BASE_URL = "http://localhost:8000"
 
 // Token related functions
-export const setToken = () => {
+export const setToken = (token) => {
     return localStorage.setItem("token", token);
 }
 
