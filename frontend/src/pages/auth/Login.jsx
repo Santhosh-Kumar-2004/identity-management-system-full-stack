@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
     const { login } = useContext(AuthContext);
-    const Navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -13,6 +13,12 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setError("")
-        
+
+        try {
+            await login(email, password)
+            navigate("/")
+        } catch (error) {
+            setError(error.message || "Login Failed")
+        }
     }
 }
