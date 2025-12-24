@@ -18,36 +18,36 @@ function App() {
       <Routes>
         {/* public auth Pages */}
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        {/* <Route path='/register' element={<Register />} /> */}
 
         {/* prontected route pages */}
-        <Route 
+        {/* <Route 
           path='/'
           element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
           }
-        />
+        /> */}
 
-        <Route 
+        {/* <Route 
           path='/profile'
           element={
             <ProtectedRoute>
               <Profile />
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         {/* admin route pages are here */}
-        <Route
+        {/* <Route
           path='/all-users'
           element={
             <AdminRoute>
               <AllUsers />
             </AdminRoute>
           } 
-        />
+        /> */}
         
       </Routes>
     </>
