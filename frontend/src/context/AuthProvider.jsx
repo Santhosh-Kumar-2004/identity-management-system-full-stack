@@ -6,8 +6,6 @@ import {
     removeToken,
 } from "../api/api";
 
-// export const AuthContext = createContext(null)
-
 export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
