@@ -11,7 +11,8 @@ passlib[argon2]
 sqlalchemy
 pydantic
 pydantic-settings
-mysqlclient
+# mysqlclient
+pymysql
 
 # CORS Handling
 starlette
