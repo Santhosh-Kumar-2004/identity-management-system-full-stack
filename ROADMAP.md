@@ -1,5 +1,5 @@
 Database design (conceptual blueprint & decisions you must make)
-================================================================
+====================================================================
 
 ### Core tables (names + purpose)
 
